@@ -5,7 +5,8 @@
 </div>
 <div class="row mt-4">
   <div class="col-md-6">
-    <form class=" new-comment-form">
+    <form class="new-comment-form">
+      <input type="hidden" name="post_id" id="post_id" value="{{id}}">
           <div class="form-group">
             <label for="comment-content">Comment:</label>
             <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
@@ -14,22 +15,24 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
     </form>
-    {{#if comments.length}}
-    <div class="col-md-6 comment-list">
-      <h3>Comments:</h3>
+  {{#if comments.length}}
+  <div class="col-md-6 comment-list">
+    <h3>Current comments:</h3>
 
-      {{#each comments as |comment|}}
-      <div class="row mb-2">
-        <div class="col-md-8">
-          <h4><a href="/comment/{{comment.id}}">{{comment.content}}</a></h4>
-        </div>
-        <div class="col-md-4">
-          <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-        </div>
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{comment.content}}</h4>
+        <p>{{comment.user.username}}</p>
+        <p>{{format_date comment.date_created}}</p>
       </div>
-      {{/each}}
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div>
     </div>
-    {{/if}}
+    {{/each}}
+  </div>
+  {{/if}}
 </div>
 
-<script src="./js/comment.js"></script>
+<script src="/js/comment.js"></script>
