@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//http://localhost:3001/post/1
+// e.g. http://localhost:3001/post/1
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -59,7 +59,6 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-//http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -81,7 +80,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // If the user is logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
