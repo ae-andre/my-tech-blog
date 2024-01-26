@@ -10,9 +10,7 @@ The [express-session package](https://www.npmjs.com/package/express-session) was
 
 ## Mock up
 
-[Techbiased Tech Blog presents existing blogs to a user that they can comment on through a secure user login.](https://drive.google.com/file/d/-------/view) 
-
-// REPLACE ABOVE LINK
+![Techbiased Tech Blog presents existing blogs to a user that they can comment on through a secure user login.](./assets/images/techbiased%20mockup.png) 
 
 ## License
 
