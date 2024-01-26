@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+//post route to create comments
 router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+//put route to update existing comments
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.update(req.body, {
@@ -35,6 +37,7 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+//delete route to delete comments
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
@@ -49,10 +52,13 @@ router.delete('/:id', withAuth, async (req, res) => {
       return;
     }
 
+    //sending back a success response
     res.status(200).json(commentData);
   } catch (err) {
+    //sending back error msg if issue deleting
     res.status(500).json(err);
   }
 });
 
+//export the router to be used in other parts of application
 module.exports = router;
