@@ -1,4 +1,4 @@
-# My-Tech-Blog
+# Techbiased-Tech-Blog
 
 A CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well.
 
@@ -10,7 +10,7 @@ The [express-session package](https://www.npmjs.com/package/express-session) was
 
 ## Mock up
 
-[My Tech Blog presents existing blogs to a user that they can comment on through a secure user login.](https://drive.google.com/file/d/-------/view) 
+[Techbiased Tech Blog presents existing blogs to a user that they can comment on through a secure user login.](https://drive.google.com/file/d/-------/view) 
 
 // REPLACE ABOVE LINK
 
